@@ -100,9 +100,9 @@ export default function() {
         }
     }, [errorMsg])
     return (
-        <div className="bg-neutral-800 h-screen w-full relative">
-            <div className="bg-neutral-300 w-1/3 h-1/2 absolute top-1/4 left-1/3 rounded">
-                <div className="mt-5">
+        <div className="bg-neutral-800 h-screen w-full grid grid-cols-1 place-items-center">
+            <div className="set-auth-width bg-neutral-300 w-1/3 rounded">
+                <div className="my-5">
                     <h1 className="text-center pt-3 text-2xl font-bold">Register Page</h1>
                     <div className="grid gap-y-2 place-items-center mt-5">
                         <div className="flex gap-x-2 grid-cols-2 w-4/5">
@@ -120,8 +120,8 @@ export default function() {
                             </label>
                             {form.profile && <p className="font-medium mt-2 ms-2">Your image: {form.profile.name}</p>}
                         </div>
-                        <p className="mt-2 text-lg font-medium">Already have an account? Click <a href="#" className="hover:underline hover:underline-offset-4 text-sky-400" onClick={() => pageNavigation("/login")}>here</a> to sign in</p>
-                        <button type="submit" className="rounded py-1 w-1/3 bg-sky-400 hover:bg-sky-600 duration-200 font-medium" onClick={submitForm}>Log in</button>
+                        <p className="ps-2 mt-2 text-lg font-medium">Already have an account? Click <a href="#" className="hover:underline hover:underline-offset-4 text-sky-400" onClick={() => pageNavigation("/login")}>here</a> to sign in</p>
+                        <button type="submit" className="rounded py-1 w-1/3 bg-sky-400 hover:bg-sky-600 duration-200 font-medium" onClick={submitForm}>Sign up</button>
                     </div>
                 </div>
                 {showModal && <Modal icon={<VscError className="w-10 h-10"/>}title={modalStatus.title} desc={modalStatus.message} handleClick={closeModal}/> }  

@@ -210,7 +210,7 @@ export default function() {
         })
     }
     return (
-        <div className="bg-slate-200 h-screen w-3/4">
+        <div className="set-width bg-slate-200 h-screen w-3/4">
             {showModal && 
                 <ModalEdit 
                     icon={modalStatus.icon} 
@@ -236,7 +236,7 @@ export default function() {
                     <InputMainPage 
                         placeholder="Add tasks" 
                         width="w-[96%]" 
-                        buttonWidth="w-[4%]" 
+                        buttonWidth="w-10" 
                         rounded="rounded-tl rounded-bl" 
                         icon={<IoMdAdd />} 
                         handleChange={(e) => setTask(e.target.value)}
@@ -246,11 +246,18 @@ export default function() {
                 </div>
                 <h3 className="text-center text-l font-medium mt-6 mb-4">Your tasks:</h3>
                 <div className="grid place-items-center">
-                    <div className="flex w-4/5">
-                        <input className="w-[3%] h-8 rounded" type="checkbox" id="allCheck" onChange={handleCheck} checked={allCheck}/>
-                        <button className="h-8 w-[10%] bg-red-500 rounded ms-3" onClick={() => dispatch({type: "deleteSelectedTasks"})} >Delete</button>
-                        <button className="h-8 w-[20%] bg-red-500 rounded ms-3" onClick={() => dispatch({type: "markUncomplete"})}>Mark as Uncompleted</button>
-                        <button className="h-8 w-[20%] bg-green-500 rounded ms-3" onClick={() => dispatch({type: "markComplete"})}>Mark as Completed</button>
+                    <div className="set-buttonAction-flex-dir flex items-center w-4/5">
+                        <div className="flex items-center">
+                            <input className="w-10 h-8 rounded" type="checkbox" id="allCheck" onChange={handleCheck} checked={allCheck}/>
+                            <button className="h-8 bg-red-500 rounded ms-3 p-2" onClick={() => dispatch({type: "markUncomplete"})}>Mark as Uncompleted</button>
+                        </div>
+                            
+                        <div className="flex items-center set-margin">
+                            <button className="h-8 bg-red-500 rounded ms-3 p-2" onClick={() => dispatch({type: "deleteSelectedTasks"})} >Delete</button>
+                            <button className="h-8 bg-green-500 rounded ms-3 p-2" onClick={() => dispatch({type: "markComplete"})}>Mark as Completed</button>
+                        </div>
+                        
+                        
                     </div>        
                 </div>
                 <div className="grid gap-y-3 grid-cols-1 place-items-center mt-2">

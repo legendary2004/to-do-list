@@ -65,9 +65,9 @@ export default function() {
     }
 
     return (
-        <div className="h-screen flex">
+        <div className="set-main-flex-dir h-screen flex">
             {showModal && <Modal icon={modalStatus.icon} title={modalStatus.title} desc={modalStatus.message} handleClick={closeModal}/>}
-            <div className="bg-neutral-300 w-1/4 shadow-md shadow-inner">
+            <div className="set-width bg-neutral-300 w-1/4 shadow-md shadow-inner">
                 <div className="mt-3 ms-5 me-5">
                     <div className="flex justify-between items-center">
                         <h1 className="text-3xl font-bold">To do list</h1>
@@ -80,8 +80,8 @@ export default function() {
                     <div className="grid gap-y-2 grid-cols-1 place-items-center mt-3">
                         <InputMainPage 
                             placeholder="Add list" 
-                            buttonWidth="w-[10%]" 
-                            width="w-[90%]" 
+                            buttonWidth="w-10" 
+                            width="w-[97%]" 
                             rounded="rounded-tl rounded-bl" 
                             icon={<IoMdAdd />} 
                             value={sideForm.addForm} 
@@ -91,8 +91,8 @@ export default function() {
                         />
                         <InputMainPage 
                             placeholder="Search your list" 
-                            buttonWidth="w-[10%]" 
-                            width="w-[90%]" 
+                            buttonWidth="w-10" 
+                            width="w-[97%]" 
                             rounded="rounded-tl rounded-bl" 
                             icon={<FaSearch />} 
                             value={sideForm.searchForm} 

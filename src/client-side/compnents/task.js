@@ -123,14 +123,10 @@ export default function Task(task) {
                 />
             }
             <div className="basis-full flex">
-                <div className="basis-11/12 flex">
-                    <input className="w-[3%] h-9 cursor-pointer p-0" type="checkbox" id={task.id} checked={task.checked} onChange={task.handleCheck}/>
-                    <input className={`w-[97%] h-8 ${bgColor} ps-3`} type="text" readOnly value={task.name} onChange={task.handleChange}/>
-                </div>
-                <div className="basis-1/12">
-                    <button className="w-1/2 h-8 text-2xl bg-neutral-100 border-r border-black ps-1.5 hover:bg-gray-300" onClick={() => dispatchButton({type: task.edit, info: newTask})}><MdEdit /></button>
-                    <button className="w-1/2 h-8 text-2xl rounded-tr rounded-br bg-neutral-100 ps-1.5 hover:bg-gray-300" onClick={() => dispatchButton({type: task.delete, info: task.name})}><MdDelete /></button>
-                </div>
+                <input className="w-10 h-8 cursor-pointer p-0" type="checkbox" id={task.id} checked={task.checked} onChange={task.handleCheck}/>
+                <input className={`w-[97%] h-8 ${bgColor} ps-3`} type="text" readOnly value={task.name} onChange={task.handleChange}/>
+                <button className="w-10 h-8 text-2xl bg-neutral-100 border-r border-black ps-1.5 hover:bg-gray-300" onClick={() => dispatchButton({type: task.edit, info: newTask})}><MdEdit /></button>
+                <button className="w-10 h-8 text-2xl rounded-tr rounded-br bg-neutral-100 ps-1.5 hover:bg-gray-300" onClick={() => dispatchButton({type: task.delete, info: task.name})}><MdDelete /></button>
             </div>
         </div>
     )

@@ -53,14 +53,14 @@ export default function() {
         else if (!errorMsg) pageNavigation("/")
     }, [errorMsg])
     return (
-        <div className="bg-neutral-800 h-screen w-full relative">
-            <div className="bg-neutral-300 w-1/3 h-1/2 absolute top-1/4 left-1/3 rounded">
-                <div className="mt-20">
+        <div className="bg-neutral-800 h-screen w-full grid grid-cols-1 place-items-center">
+            <div className="set-auth-width bg-neutral-300 w-1/3 rounded">
+                <div className="my-5">
                     <h1 className="text-center pt-3 text-2xl font-bold">Login Page</h1>
                     <div className="grid gap-y-2 grid-cols-1 place-items-center mt-5">
                         <Input type="email" placeholder="Enter email" id="email" width="w-4/5" rounded="rounded" value={form.email} handleChange={handleForm}/>
                         <Input type="password" placeholder="Enter password" id="pass" width="w-4/5" rounded="rounded" value={form.pass} handleChange={handleForm}/>
-                        <p className="mt-4 text-lg font-medium">Do not have an account? Click <a href="#" className="hover:underline hover:underline-offset-4 text-sky-400" onClick={() => pageNavigation("/register")}>here</a> to create one</p>
+                        <p className="mt-4 text-lg font-medium ps-2">Do not have an account? Click <a href="#" className="hover:underline hover:underline-offset-4 text-sky-400" onClick={() => pageNavigation("/register")}>here</a> to create one</p>
                         <button type="submit" className="rounded py-1 mt-2 w-1/3 bg-sky-400 hover:bg-sky-600 duration-200 font-medium" onClick={submitForm}>Log in</button>
                     </div>
                 </div>    
